@@ -17,14 +17,15 @@
       <span id="userName">User</span>
     </div>
     <button class="btn small gradient" onclick="goHome()">Home</button>
-    <button class="btn small gradient" onclick="logout()">Logout</button>
+    <button class="btn small gradient" onclick="dashBoard()">DashBoard</button>
   </div>
 </header>
     <!-- Deposit Modal -->
 <div id="depositModal" class="modal">
   <div class="modal-content glass">
     <span class="close" onclick="closeDepositModal()">&times;</span>
-    <h3 class="modal-title">Fund Your Account</h3>
+    <h5 style="font-size: 90%;" class="modal-title">Insuficient Balance</h5>
+    <h3 class="modal-title">Fund Wallet To Continue</h3>
     <p class="modal-subtitle">Choose a crypto to deposit:</p>
 
     <div class="crypto-options">
@@ -34,14 +35,14 @@
       <button class="crypto-btn" data-asset="ETH" onclick="selectCrypto(this)">
         <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH"> Ethereum (ETH)
       </button>
-      <button class="crypto-btn" data-asset="USDC" onclick="selectCrypto(this)">
-        <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC"> USDC (ERC20)
+      <button class="crypto-btn" data-asset="TRON" onclick="selectCrypto(this)">
+        <img src="https://cryptologos.cc/logos/tron-trx-logo.png?v=002" alt="TRON"> TRON (TRX)
       </button>
     </div>
 
     <div class="deposit-info">
       <p id="depositNetwork">Network: BTC</p>
-      <p id="depositAddress">Wallet Address: bc1q-demo-btc-address</p>
+      <p id="depositAddress">Wallet Address: 13NUaMbpzNKYuss7H4wzYbTS24GRJHYhxR</p>
       <div class="deposit-actions">
         <button class="btn gradient full" onclick="copyDeposit()">Copy Address</button>
         <button class="btn full" onclick="closeDepositModal()">Close</button>
@@ -131,5 +132,6 @@
 </div>
 
 <script src="bot.js"></script>
+<script src="dashboard.js"></script>
 </body>
 </html>

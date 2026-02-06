@@ -178,8 +178,8 @@ function selectCrypto(btn) {
       networkText.textContent = "Network: ETH";
       addressText.textContent = "Wallet Address: 0xDemoEthereumAddress";
       break;
-    case "USDC":
-      networkText.textContent = "Network: ERC-20";
+    case "TRON":
+      networkText.textContent = "Network: TRX";
       addressText.textContent = "Wallet Address: 0xDemoUSDC_ERC20";
       break;
   }

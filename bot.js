@@ -1,10 +1,15 @@
 function goHome() {
     window.location.href = 'index.html'
 }
-function logout() {
-  localStorage.removeItem("loggedInUser");
-  window.location.href = "auth.html";
+const user = localStorage.getItem("username");
+
+document.getElementById("userName").textContent = user;
+
+function dashBoard() {
+  window.location.href = "dashboard.html"
 }
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
 
@@ -62,15 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const depositNetworkEl = document.getElementById("depositNetwork");
 
     const depositAddresses = {
-      BTC: "bc1q-demo-btc-address",
-      ETH: "0xDemoEthereumAddress",
-      USDC: "0xDemoUSDC_ERC20"
+      BTC: "13NUaMbpzNKYuss7H4wzYbTS24GRJHYhxR",
+      ETH: "0x1883ba6b1944f3ff8c89fff96f67de16a6ecd450",
+      TRON: "TYQaTH8DWgPUt5dpeWtPtPEQ6WhpipWaTC"
     };
 
     const networks = {
       BTC: "Network: BTC",
       ETH: "Network: ETH",
-      USDC: "Network: ERC-20"
+      USDC: "Network: TRX"
     };
 
     depositAddressEl.textContent = `Wallet Address: ${depositAddresses[asset]}`;
