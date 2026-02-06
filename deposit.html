@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Luminex | Deposit Crypto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+    <h2>Deposit Funds</h2>
+
+    <select id="asset" onchange="updateDeposit()">
+      <option value="BTC">Bitcoin (BTC)</option>
+      <option value="ETH">Ethereum (ETH)</option>
+      <option value="USDC">USDC (ERC-20)</option>
+    </select>
+
+    <p id="network">Network: —</p>
+    <p id="address"></p>
+
+    <button class="btn" onclick="copyAddress()">Copy Address</button>
+
+    <p style="color:var(--danger)">
+      Sending assets on the wrong network will result in permanent loss.
+    </p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

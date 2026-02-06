@@ -1,0 +1,318 @@
+:root {
+  --bg: #0b0f1a;
+  --glass: rgba(255, 255, 255, 0.05);
+  --text: #fff;
+  --muted: #aaa;
+  --accent: #4f46e5;
+  --green: #10b981;
+}
+
+body {
+  margin: 0;
+  font-family: 'K2D', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Glass Cards */
+.card.glass {
+  background: var(--glass);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(11,15,26,0.95); /* Reduced flicker */
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Modal Content */
+.modal-content {
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Crypto Buttons */
+.crypto-options {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem;
+}
+
+.crypto-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.crypto-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.crypto-btn:hover {
+  transform: scale(1.05);
+  background: rgba(79,70,229,0.3);
+}
+
+.crypto-btn.active {
+  border: 2px solid var(--accent);
+  background: rgba(79,70,229,0.3);
+}
+
+/* Deposit Info */
+.deposit-info p {
+  margin: 0.5rem 0;
+}
+.deposit-info .full {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* Bot Card Styling */
+.bot-card select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: none;
+  margin: 0.8rem 0;
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+  font-size: 0.95rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white'><polygon points='0,0 12,0 6,6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.bot-card select:focus {
+  outline: 2px solid var(--accent);
+  background-color: rgba(79,70,229,0.1);
+}
+
+/* Bot Info */
+.bot-info {
+  margin: 0.8rem 0;
+}
+.bot-info p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+/* Bot Controls */
+.bot-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.bot-controls .badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-weight: bold;
+  background: var(--muted);
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+/* Active Badge */
+.badge.active {
+  background: var(--green);
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(15px);
+  background: rgba(15, 15, 28, 0.6); /* frosted glass effect */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 20px;
+}
+
+/* Logo */
+.topbar .logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* User Section */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.user-info .avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #4f46e5, #7873f5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.6);
+}
+
+/* Buttons */
+.topbar .btn {
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.topbar .btn.gradient {
+  background: linear-gradient(90deg, #4f46e5, #7873f5);
+  color: #fff;
+}
+
+.topbar .btn.gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.6);
+}
+
+/* Small buttons */
+.topbar .btn.small {
+  padding: 0.35rem 0.85rem;
+}
+
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.btn.gradient {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255,110,196,0.3);
+}
+
+.btn.gradient:hover {
+  box-shadow: 0 8px 25px rgba(255,110,196,0.5);
+}
+
+/* Grids */
+.container {
+  padding: 0 2rem;
+}
+.grid { display: grid; gap: 1.5rem; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+/* Charts */
+.chart-card .tv-chart { height: 300px; }
+
+/* Section Titles */
+.section-title {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(79,70,229,0.5);
+}
+
+/* Muted Text */
+.muted { color: var(--muted); font-size: 0.9rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container { padding: 1rem; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .topbar { flex-direction: column; gap: 1rem; }
+}

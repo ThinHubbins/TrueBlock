@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luminex | Dashboard</title>
+  <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+
+<!-- Top Navigation Bar -->
+<header class="topbar glass">
+  <div class="logo">
+    <h1>Crypto Broker</h1>
+  </div>
+  <div class="user-section">
+    <div class="user-info">
+      <div class="avatar">U</div>
+      <span id="userName">User</span>
+    </div>
+    <button class="btn small gradient" onclick="goHome()">Home</button>
+    <button class="btn small gradient" onclick="logout()">Logout</button>
+  </div>
+</header>
+
+
+
+<!-- Main Dashboard -->
+<main class="container">
+
+  <!-- Dashboard Stats -->
+  <section class="grid grid-3 stats-section">
+    <div class="card glass">
+      <h3>Total Balance</h3>
+      <h2>$24,580.23</h2>
+    </div>
+    <div class="card glass">
+  <h3>Deposit</h3>
+  <p class="muted">Fund your account with crypto</p>
+  <button class="btn gradient" onclick="openDepositModal()">Deposit</button>
+</div>
+
+<!-- Deposit Modal -->
+<div id="depositModal" class="modal">
+  <div class="modal-content glass">
+    <span class="close" onclick="closeDepositModal()">&times;</span>
+    <h3>Deposit Crypto</h3>
+
+    <div class="crypto-options">
+      <button class="crypto-btn" data-asset="BTC" onclick="selectCrypto(this)">
+        <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC"> Bitcoin
+      </button>
+      <button class="crypto-btn" data-asset="ETH" onclick="selectCrypto(this)">
+        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH"> Ethereum
+      </button>
+      <button class="crypto-btn" data-asset="USDC" onclick="selectCrypto(this)">
+        <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png" alt="USDC"> USDC
+      </button>
+    </div>
+
+    <div class="deposit-info">
+      <p id="depositNetwork">Network: BTC</p>
+      <p id="depositAddress">Wallet Address: bc1q-demo-btc-address</p>
+      <button class="btn gradient full" onclick="copyDeposit()">Copy Address</button>
+    </div>
+  </div>
+</div>
+
+
+  <div class="card glass bot-card">
+  <h3>Trading Bot</h3>
+  <a href="bot.html">
+  <button class="btn gradient full">
+    Let Your Money Work For You
+  </button></a>
+</div>
+
+
+  </section>
+
+  <!-- Live Market Charts -->
+  <section>
+    <h2 class="section-title">The Market</h2>
+    <div class="grid grid-2 chart-grid">
+      <div class="card glass chart-card">
+        <h3>BTC / USD</h3>
+        <div class="tv-chart" id="btc"></div>
+      </div>
+      <div class="card glass chart-card">
+        <h3>ETH / USD</h3>
+        <div class="tv-chart" id="eth"></div>
+      </div>
+      <div class="card glass chart-card">
+        <h3>SOL / USD</h3>
+        <div class="tv-chart" id="sol"></div>
+      </div>
+      <div class="card glass chart-card">
+        <h3>BNB / USD</h3>
+        <div class="tv-chart" id="bnb"></div>
+      </div>
+      <div class="card glass chart-card">
+        <h3>ADA / USD</h3>
+        <div class="tv-chart" id="ada"></div>
+      </div>
+      <div class="card glass chart-card">
+        <h3>XRP / USD</h3>
+        <div class="tv-chart" id="xrp"></div>
+      </div>
+    </div>
+  </section>
+</section> <!-- end of Live Market Charts -->
+
+<!-- History Section -->
+<section id="historySection">
+<div class="logo">
+    <h1>History</h1>
+    <hr/>
+    <div style="height: 50vh; display: flex; justify-content: center; align-items: center;">
+        <div style=" display: inline;">
+        <h1>No hystory</h1>
+        
+        <div class="card">
+  <button class="btn gradient" onclick="openDepositModal()">Start Trading</button>
+</div>
+    </div></div>
+  </div>
+</section>
+
+</main>
+
+
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

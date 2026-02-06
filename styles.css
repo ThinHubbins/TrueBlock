@@ -1,0 +1,933 @@
+:root {
+  --bg: #0b0f1a;
+  --card: #12182b;
+  --accent: #4f46e5;
+  --accent-2: #22c55e;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --danger: #ef4444;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* =========================
+   HERO SECTION
+========================= */
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(15px);
+  background: rgba(15, 15, 28, 0.6); /* frosted glass effect */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  border-radius: 0 0 20px 20px;
+}
+
+/* Logo */
+.topbar .logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* User Section */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.user-info .avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #4f46e5, #7873f5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.6);
+}
+
+/* Buttons */
+.topbar .btn {
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.topbar .btn.gradient {
+  background: linear-gradient(90deg, #4f46e5, #7873f5);
+  color: #fff;
+}
+
+.topbar .btn.gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.6);
+}
+
+/* Small buttons */
+.topbar .btn.small {
+  padding: 0.35rem 0.85rem;
+}
+
+
+/* Buttons */
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.small {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.btn.gradient {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255,110,196,0.3);
+}
+
+.btn.gradient:hover {
+  box-shadow: 0 8px 25px rgba(255,110,196,0.5);
+}
+
+.hero {
+  position: relative;
+  padding: 5rem 0 4rem;
+  background:
+    radial-gradient(600px circle at 20% 20%, rgba(79,70,229,0.25), transparent 40%),
+    radial-gradient(600px circle at 80% 60%, rgba(34,197,94,0.15), transparent 40%);
+  overflow: hidden;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  background: rgba(79,70,229,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(79,70,229,0.3);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, #7c3aed, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  max-width: 560px;
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(79,70,229,0.6);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: rgba(79,70,229,0.15);
+}
+
+.hero-trust {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* =========================
+   MARKET CARDS SPACING
+========================= */
+.hero + .container {
+  margin-top: -1rem;
+}
+
+/* =========================
+   MOBILE TUNING
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero-trust {
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+  }
+}
+/* =========================
+   BOT SECTION
+========================= */
+
+.bot-section {
+  padding: 5rem 0;
+  background:
+    radial-gradient(500px circle at 80% 20%, rgba(79,70,229,0.2), transparent 40%);
+}
+
+.bot-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* LEFT SIDE */
+.bot-info h1 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.bot-info h1 span {
+  background: linear-gradient(135deg, #7c3aed, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bot-badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(79,70,229,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(79,70,229,0.35);
+}
+
+.bot-desc {
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+/* BOT STATS */
+.bot-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.bot-stats h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.bot-stats p {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* RIGHT SIDE CONTROLS */
+.bot-controls h3 {
+  margin-bottom: 1.2rem;
+}
+
+.control-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.bot-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.2rem 0;
+  font-size: 0.85rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.status-dot.active {
+  background: var(--accent-2);
+  box-shadow: 0 0 10px rgba(34,197,94,0.7);
+}
+
+.bot-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+/* START / STOP BUTTONS */
+.btn-start {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.btn-stop {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+.btn-start:hover,
+.btn-stop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
+}
+
+.bot-warning {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--danger);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .bot-stats {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* LAYOUT */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.15);
+}
+
+/* BUTTON */
+.btn {
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--accent-2);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* =========================
+   AUTH SECTION
+========================= */
+.auth-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, rgba(79,70,229,0.2), transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(34,197,94,0.15), transparent 50%);
+  padding: 2rem;
+}
+
+.auth-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* CARD */
+.auth-card {
+  background: linear-gradient(145deg, #0f162a, #020617);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 0 0 1px rgba(79,124,255,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(79,70,229,0.5), 0 0 0 1px rgba(79,124,255,0.3);
+}
+
+/* HEADINGS */
+.auth-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #7c3aed, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auth-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+/* INPUTS */
+.auth-card input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  background: #020617;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(79,70,229,0.4);
+}
+
+/* BUTTONS */
+.btn.full {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 12px;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--accent), #22c55e);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn.full:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(79,70,229,0.5), 0 0 15px rgba(34,197,94,0.3);
+}
+
+/* PASSWORD STRENGTH */
+.password-strength {
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.password-strength.weak {
+  color: var(--danger);
+}
+
+.password-strength.medium {
+  color: #facc15;
+}
+
+.password-strength.strong {
+  color: var(--accent-2);
+}
+/* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 25, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Modal Content */
+.modal-content {
+  background: linear-gradient(135deg, rgba(15,15,30,0.85), rgba(30,30,60,0.85));
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 450px;
+  margin: 5% auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s;
+}
+.close:hover {
+  transform: scale(1.2);
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #7c3aed, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.modal-subtitle {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 1.5rem;
+}
+
+/* Crypto Buttons */
+.crypto-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.crypto-btn {
+  flex: 1 1 30%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.crypto-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.crypto-btn:hover {
+  background: rgba(79,70,229,0.3);
+  transform: scale(1.05);
+}
+
+.crypto-btn.active {
+  border: 2px solid #4f46e5;
+  background: rgba(79,70,229,0.3);
+}
+
+/* Deposit Info */
+.deposit-info {
+  text-align: center;
+}
+
+.deposit-info p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+/* Deposit Actions */
+.deposit-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.deposit-actions .btn.full {
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.7rem 0;
+}
+
+.deposit-actions .btn.gradient {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+.deposit-actions .btn.gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255,110,196,0.4);
+}
+
+.deposit-actions .btn:not(.gradient) {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .crypto-options {
+    flex-direction: column;
+  }
+  .crypto-btn {
+    width: 100%;
+  }
+}
+
+/* ERROR MESSAGES */
+.auth-error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+  min-height: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* AUTH NOTE */
+.auth-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* =========================
+   DASHBOARD ENHANCEMENTS
+========================= */
+
+/* Wallet text spacing */
+.card p {
+  margin: 0.3rem 0;
+}
+
+/* Deposit section */
+select {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 0.7rem 0;
+  border-radius: 10px;
+  border: none;
+  background: #0b0f1a;
+  color: var(--text);
+  outline: none;
+}
+
+select:focus {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.warning {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+/* =========================
+   CHART STYLING
+========================= */
+canvas {
+  margin-top: 1rem;
+}
+
+/* Token selector above chart */
+#tokenSelector {
+  margin-bottom: 1rem;
+}
+
+/* Chart card emphasis */
+.card h3 {
+  margin-bottom: 0.8rem;
+}
+
+/* Subtle glow on chart cards */
+.card:has(canvas) {
+  box-shadow: 0 0 30px rgba(79, 70, 229, 0.25);
+}
+
+
+/* =========================
+   ACHIEVEMENTS SECTION
+========================= */
+
+.achievements {
+  padding: 5rem 0;
+  background:
+    radial-gradient(500px circle at 20% 30%, rgba(79,70,229,0.18), transparent 40%),
+    radial-gradient(500px circle at 80% 70%, rgba(34,197,94,0.15), transparent 40%);
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  background: rgba(79,70,229,0.15);
+  color: var(--accent);
+  border: 1px solid rgba(79,70,229,0.3);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+.section-title span {
+  background: linear-gradient(135deg, #7c3aed, #22c55e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.achievements-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+
+.achievement-card {
+  background: rgba(18, 24, 43, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(79,70,229,0.5);
+}
+
+.achievement-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.achievement-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--accent-2);
+}
+
+.achievement-text {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* =========================
+   PAST TRADES WITH IMAGES
+========================= */
+.trade-card {
+  background: rgba(18,24,43,0.85);
+  backdrop-filter: blur(15px);
+  border-radius: 18px;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trade-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(79,70,229,0.5);
+}
+
+.trade-image img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.trade-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: var(--accent-2);
+}
+
+.trade-pair {
+  font-size: 1rem;
+}
+
+.trade-date {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.trade-result {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #22c55e; /* green for profit */
+}
+
+.trade-details {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* GRID */
+.trades-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .trades-grid {
+    gap: 1.5rem;
+  }
+  .trade-image img {
+    height: 120px;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .section-title {
+    margin-bottom: 2rem;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.2rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+}
