@@ -172,15 +172,15 @@ function selectCrypto(btn) {
   switch(selectedAsset){
     case "BTC":
       networkText.textContent = "Network: BTC";
-      addressText.textContent = "Wallet Address: bc1q-demo-btc-address";
+      addressText.textContent = "Wallet Address: 13NUaMbpzNKYuss7H4wzYbTS24GRJHYhxR";
       break;
     case "ETH":
       networkText.textContent = "Network: ETH";
-      addressText.textContent = "Wallet Address: 0xDemoEthereumAddress";
+      addressText.textContent = "Wallet Address: 0x1883ba6b1944f3ff8c89fff96f67de16a6ecd450";
       break;
     case "TRON":
       networkText.textContent = "Network: TRX";
-      addressText.textContent = "Wallet Address: 0xDemoUSDC_ERC20";
+      addressText.textContent = "Wallet Address: TYQaTH8DWgPUt5dpeWtPtPEQ6WhpipWaTC";
       break;
   }
 }
@@ -188,9 +188,9 @@ function selectCrypto(btn) {
 function copyDeposit() {
   let address = "";
   switch(selectedAsset){
-    case "BTC": address = "bc1q-demo-btc-address"; break;
-    case "ETH": address = "0xDemoEthereumAddress"; break;
-    case "USDC": address = "0xDemoUSDC_ERC20"; break;
+    case "BTC": address = "13NUaMbpzNKYuss7H4wzYbTS24GRJHYhxR"; break;
+    case "ETH": address = "0x1883ba6b1944f3ff8c89fff96f67de16a6ecd450"; break;
+    case "TRON": address = "TYQaTH8DWgPUt5dpeWtPtPEQ6WhpipWaTC"; break;
   }
   navigator.clipboard.writeText(address);
   showNotification("Deposit address copied!");
